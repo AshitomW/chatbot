@@ -18,7 +18,13 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { router, useLocalSearchParams } from "expo-router";
-import { apiKey, BOT_ID, USER_ID } from "../../constants/constants";
+import {
+  apiKey,
+  BOT_ID,
+  USER_ID,
+  GROK_URL,
+  POLLINATION_URL,
+} from "../../constants/constants";
 
 const craftMessage = (queryMessage, options, image = "") => {
   const message = {
@@ -89,7 +95,7 @@ const Model = () => {
       GiftedChat.append(previousMessages, [message])
     );
 
-    fetch("https://api.x.ai/v1/chat/completions", {
+    fetch(GROK_URL, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -131,7 +137,7 @@ const Model = () => {
       GiftedChat.append(previousMessages, [message])
     );
 
-    const imagelocation = `https://image.pollinations.ai/prompt/${queryText}`;
+    const imagelocation = `${POLLINATION_URL}/${queryText}`;
 
     fetch(imagelocation)
       .then((_) => {
