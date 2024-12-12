@@ -81,7 +81,7 @@ const Model = () => {
   };
 
   function handleGeneration() {
-    if (queryText.toLowerCase().includes("generate image")) {
+    if (/generate image/i.test(queryText)) {
       generateImage();
     } else {
       sendRequest();
