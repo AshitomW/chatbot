@@ -2,7 +2,7 @@
 This is a React Native Expo-based chatbot application that leverages Grok AI for text generation and Pollination AI for image generation.
 
 ## Features
-- Text Messaging: Chat seamlessly with the bot for instant responses.
+- Text Messaging: Chat  with the bot for responses.
 - Image Generation: Generate images based on your prompts.
 - Text Narration: Convert text to speech for a hands-free experience.
 - Speech to Text: Convert speech to a text prompt.
